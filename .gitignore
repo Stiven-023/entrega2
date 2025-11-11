@@ -1,0 +1,12 @@
+node_modules
+# Test
+*.out
+test_results
+cypress/screenshots/
+cypress/videos/
+
+# editores
+.vscode/
+.zed/
+
+.env
