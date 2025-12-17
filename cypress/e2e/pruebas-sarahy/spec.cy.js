@@ -94,13 +94,6 @@ describe('Pruebas de formulario de contacto Dolibarr', () => {
     cy.wait(3000);
   });
 
-  it('prueba correo inválido2', () => {
-    llenarCamposBasicos();
-    llenarPuesto('Gerente');
-    cy.get('[name="email"]').clear().type('45');
-    cy.get('#id-right [name="add"]').click();
-    cy.wait(3000);
-  });
 
   it('prueba puestoTrabajo inválido', () => {
     llenarCamposBasicos();
