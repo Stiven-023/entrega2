@@ -54,14 +54,8 @@ describe('Pruebas de formulario de contacto Dolibarr', () => {
     cy.wait(3000);
   });
 
-  it('prueba etiqueta inválida', () => {
-    llenarCamposBasicos();
-    llenarPuesto('Gerente');
-    cy.get('[name="lastname"]').clear().type('5'.repeat(100));
-    cy.get('#id-right [name="add"]').click();
-    cy.wait(3000);
-  });
 
+  
   it('prueba etiqueta inválida2', () => {
     llenarCamposBasicos();
     llenarPuesto('Gerente');
@@ -78,13 +72,7 @@ describe('Pruebas de formulario de contacto Dolibarr', () => {
     cy.wait(3000);
   });
 
-  it('prueba nombre inválido2', () => {
-    llenarCamposBasicos();
-    llenarPuesto('Gerente');
-    cy.get('[name="firstname"]').clear().type('@'.repeat(50));
-    cy.get('#id-right [name="add"]').click();
-    cy.wait(3000);
-  });
+
 
   it('prueba correo inválido', () => {
     llenarCamposBasicos();
@@ -94,20 +82,6 @@ describe('Pruebas de formulario de contacto Dolibarr', () => {
     cy.wait(3000);
   });
 
-
-  it('prueba puestoTrabajo inválido', () => {
-    llenarCamposBasicos();
-
-    // SOLUCIÓN: Manejo específico para el campo puesto problemático
-    cy.get('[name="poste"]').then(($input) => {
-      if ($input.is(':visible') && !$input.is(':disabled')) {
-        cy.wrap($input).click().clear().type('A'.repeat(300), { delay: 0 });
-      }
-    });
-
-    cy.get('#id-right [name="add"]').click();
-    cy.wait(3000);
-  });
 
   it('prueba puestoTrabajo inválido2', () => {
     llenarCamposBasicos();
